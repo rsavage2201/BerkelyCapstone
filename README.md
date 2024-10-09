@@ -123,18 +123,18 @@ Objective Overview: Modules 6 and 7 are designed to evaluate the performance of 
 Module 8 implements and simulates a trading strategy using the predictions from the SARIMA and Random Forest models to evaluate how well these models can forecast BTC price movements. The strategy involves buying BTC when the predicted price (from either model) is higher than the actual price and selling it 7 days later.
 
 Output Summary:
-•	The module produced plots (combined_vs_actual_btc_prices.png) and a detailed table with the actual BTC prices, model predictions (SARIMA and Random Forest), and the difference (delta) between the actual prices and the predictions for each day.
-•	This output helps visualize and assess the accuracy of the models' predictions and their alignment with actual BTC price changes. The deltas reveal whether the models tend to overestimate or underestimate BTC prices at different points, which is critical for evaluating the effectiveness of the trading strategy.
+- The module produced plots (combined_vs_actual_btc_prices.png) and a detailed table with the actual BTC prices, model predictions (SARIMA and Random Forest), and the difference (delta) between the actual prices and the predictions for each day.
+- This output helps visualize and assess the accuracy of the models' predictions and their alignment with actual BTC price changes. The deltas reveal whether the models tend to overestimate or underestimate BTC prices at different points, which is critical for evaluating the effectiveness of the trading strategy.
 
 Module 9 builds on Module 8 by calculating the total financial impact of executing the trading strategy based on the model predictions over the 9-month period from January 1, 2024, to September 30, 2024.
 
 Output Summary:
-•	The BTC market saw a 31.69% increase in price from $49,958.22 at the start of the year to $65,790.66 at the end of September 2024.
-•	SARIMA Model:
+- The BTC market saw a 31.69% increase in price from $49,958.22 at the start of the year to $65,790.66 at the end of September 2024.
+- SARIMA Model:
 -	Total spent: $5,485,166.23
 -	Total realized: $5,550,048.20
 -	Net gain: $64,881.97 (1.18% gain)
-•	Random Forest Model:
+-	Random Forest Model:
 -	Total spent: $4,165,978.86
 -	Total realized: $4,349,286.58
 -	Net gain: $183,307.72 (4.40% gain)
@@ -159,7 +159,7 @@ Recommendations
 2.	Model Improvement:
 -	Enhance the SARIMA model by exploring hybrid models (e.g., combining SARIMA with LSTM) to better capture BTC price volatility.
 -	Focus on short-term forecasting: Models like Random Forest and Linear Regression demonstrate strong capabilities for short-term BTC predictions and should be preferred for intervals of up to 7 days.
-•	Further tuning for LSTM models: Given their potential, additional configurations (e.g., deeper networks, different input sequences, or other recurrent architectures like GRU) may be explored to improve performance.
+-	Further tuning for LSTM models: Given their potential, additional configurations (e.g., deeper networks, different input sequences, or other recurrent architectures like GRU) may be explored to improve performance.
 3.	Explore Other Time Horizons
 -	The models work better with shorter time horizons, my next step is to explore the 48 hour time horizon and repeat the trading experiment.
 4.	Investment Strategy:
@@ -178,8 +178,8 @@ Recommendations
 
 **Dependencies**
 Ensure the following libraries are installed:
-•	Python 3.8+
-•	pandas, numpy, matplotlib, seaborn, scikit-learn, statsmodels, pmdarima, yfinance, cryptocompare, joblib, shap, datetime
+- Python 3.8+
+- pandas, numpy, matplotlib, seaborn, scikit-learn, statsmodels, pmdarima, yfinance, cryptocompare, joblib, shap, datetime
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
