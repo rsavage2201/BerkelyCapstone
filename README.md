@@ -6,7 +6,7 @@ This project intends to explore if there is a predictive relationship between th
 If this relationship exists, we want to determine if it can be accurately modelled it using the techniques covered during this course, with the goal to evaluate whether a model can be created that is accurate enough to guide profitable trading decisions.
 
 **Business Understanding**
-The thesis is that a significant portion of the top 5 technology company’s (Google, Amazon, Meta, Microsoft, and Apple) future revenue and growth - and therefore value is heavily dependent on ML/AI. This value will be reflected in their current Stock Price.
+The thesis is that a significant portion of the top 5 technology company’s (Google, Amazon, Meta, Microsoft, and Apple) future revenue and growth - and therefore value, is heavily dependent on ML/AI. This value will be reflected in their current Stock Price.
 
 The value of ML/AI in turn is highly dependent on the raw cost of computation, with which the price of the major crypto currencies are highly correlated with. One “mines” for Bitcoin for example, by using CPUs/GPUs to solve complex mathematical problems (hashes) to validate and add transactions to the blockchain. So ones of the reasons Bitcoins price is so volatile is because the underlying cost of computation changes (e.g. the recent introduction of the Nvidia GPU chips).
 
@@ -21,8 +21,9 @@ So, there are two different financial instruments, valued (separately) on the sa
 6.	Implementation of Best Models
 7.	Dependencies
 8.	Findings and Recommendations
-9.	License
-10.	Contact
+9.	Output Files and Images
+10.	License
+11.	Contact
 
 **Installation**
 To run this project, follow these steps:
@@ -78,17 +79,17 @@ Models were evaluated the for predictions at the following intervals:
 These intervals were chosen to assess the models’ performance in both short-term (daily) and longer-term (weekly and monthly) forecasts.
 
 Random Forest and Linear Regression Implementation:
-For each forecast interval (e.g., BTC_1d, BTC_7d), we trained a separate model. This allowed the models to focus on the specifics of each interval, such as different patterns or feature importance relevant to that time frame.
+For each forecast interval (e.g., BTC_1d, BTC_7d), a separate model was trained. This allowed the models to focus on the specifics of each interval, such as different patterns or feature importance relevant to that time frame.
 
 ARIMA and SARIMA Parameter Selection:
 ARIMA: Auto ARIMA was used to optimize the ARIMA parameters (p, d, q). This automated process ensures that the most suitable configuration is selected based on the data for each interval.
 SARIMA: SARIMA used the same non-seasonal parameters identified by ARIMA but added seasonal parameters (1, 1, 1, 7) to account for any cyclical patterns within the weekly timeframe.
 
 LSTM Model Tuning
-In addition to the above models, I experimented with Long Short-Term Memory (LSTM) networks, known for their effectiveness in time series predictions. Here's how the LSTM models were designed and tuned:
+In addition to the above models, I also experimented with Long Short-Term Memory (LSTM) networks, given their effectiveness in time series predictions. Here's how the LSTM models were designed and tuned:
 
 Tuning Hyperparameters:
-I designed multiple configurations with varying numbers of LSTM layers, dropout rates, and units per layer:
+Multiple configurations with varying numbers of LSTM layers, dropout rates, and units per layer were designed:
 o	Baseline: A single LSTM layer with 50 units.
 o	Configuration 1: Two LSTM layers (50 units each) with dropout rates of 0.2 after each layer to prevent overfitting.
 o	Configuration 2: A single LSTM layer with 100 units and a dropout rate of 0.3. The activation function used was tanh, and the optimizer was set to rmsprop.
@@ -112,7 +113,7 @@ o	SARIMA showed a slight improvement over ARIMA, particularly for short-term int
 o	Outperformed other traditional models (e.g., ARIMA, SARIMA) with positive R² values for short- and medium-term predictions (BTC_0d, BTC_1d, BTC_7d, and BTC_14d). The model’s R² values decreased and even turned negative for BTC_28d, demonstrating reduced reliability for long-term forecasting.
 o	Achieved the lowest RMSE values for short-term predictions, highlighting its effectiveness in capturing the immediate patterns in BTC price fluctuations.
 4.	LSTM Models:
-o	We tested multiple configurations of LSTM models (Baseline, Configuration 1, Configuration 2, Configuration 3), experimenting with different hyperparameters like the number of layers, units per layer, activation functions, dropout rates, and optimizers to optimize performance:
+o	Multiple configurations of LSTM models were tested (Baseline, Configuration 1, Configuration 2, Configuration 3), experimenting with different hyperparameters like the number of layers, units per layer, activation functions, dropout rates, and optimizers to optimize performance:
 	Baseline: A simple LSTM with one layer, which generally showed very high RMSE and negative R² values across all intervals.
 	Configuration 1: Included two LSTM layers and dropout; although some improvements were observed, it still showed poor performance, particularly for the short-term intervals (BTC_0d and BTC_1d).
 	Configuration 2: Tuned for a single large LSTM layer with a higher dropout rate and the tanhactivation function. However, this configuration yielded high RMSE and negative R² values, indicating it was not effective for this task.
@@ -150,8 +151,8 @@ o	Long-term predictions (28 days) show a significant decline across all models, 
 o	LSTM configurations tested did not outperform traditional models, even with extensive hyperparameter tuning, likely due to the complexity and volatility of BTC prices that require more advanced architectures or feature engineering.
 
 2.	Trading Simulation:
-o	The trading strategy based on Random Forest predictions resulted in a higher profit than the SARIMA-based strategy, however, neither produced a return that seemed commiserate with the risk being incurred, and which didn’t outperform a simple “Buy and Hold” strategy.
-o   Ultimately the project failed to create a model accurate enough to guide profitable trading decisions, but this is a very hard problem to solve and this project is a great starting point.
+o	The trading strategy based on Random Forest predictions resulted in a higher profit than the SARIMA-based strategy, however, neither produced a return that seemed commiserate with the risk being incurred, and neither outperformed a simple “Buy and Hold” strategy.
+o   Ultimately the project failed to create a model accurate enough to guide profitable trading decisions, but this is a very hard problem to solve and this project is a great starting point. 
 
 Recommendations
 1.	Expand Features:
@@ -161,26 +162,25 @@ o	Enhance the SARIMA model by exploring hybrid models (e.g., combining SARIMA wi
 o	Focus on short-term forecasting: Models like Random Forest and Linear Regression demonstrate strong capabilities for short-term BTC predictions and should be preferred for intervals of up to 7 days.
 •	Further tuning for LSTM models: Given their potential, additional configurations (e.g., deeper networks, different input sequences, or other recurrent architectures like GRU) may be explored to improve performance.
 3.	Explore Other Time Horizons
-o	The models work better with shorter time horizons. 
+o	The models work better with shorter time horizons, my next step is to explore the 48 hour time horizon and repeat the trading experiment.
 4.	Investment Strategy:
 o	Consider implementing an ensemble approach that combines the top-performing models for a more robust and diversified trading strategy.
 
 **Output Files and Images**
 1.	combined_stock_data.csv
-2.	normalized_prices_excluding_usdc_usdt.png
-3.	model_performance_summary.csv
-4.	average_rmse_per_model.png
-5.	average_r2_per_model.png
-6.	lstm_config_comparison.csv
-7.	combined_vs_actual_btc_prices.png
-8.	trading_strategy_results.txt
+2.  crypto_data_combined.csv
+3.	normalized_prices_excluding_usdc_usdt.png
+4.	model_performance_summary.csv
+5.	average_rmse_per_model.png
+6.	average_r2_per_model.png
+7.	lstm_config_comparison.csv
+8.	combined_vs_actual_btc_prices.png
+9.	trading_strategy_results.txt
 
 **Dependencies**
 Ensure the following libraries are installed:
 •	Python 3.8+
-•	pandas, numpy, matplotlib
-•	scikit-learn, statsmodels, yfinance
-•	joblib, shap
+•	pandas, numpy, matplotlib, seaborn, scikit-learn, statsmodels, pmdarima, yfinance, cryptocompare, joblib, shap, datetime
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
