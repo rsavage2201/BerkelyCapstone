@@ -1,0 +1,16 @@
+----- Trading Strategy Results -----
+Starting BTC Price (2024-01-01): $49,958.22
+Ending BTC Price (2024-09-30): $65,790.66
+BTC Price Percentage Change: 31.69%
+
+SARIMA Model:
+Total spent purchasing BTC: $5,485,166.23
+Total realized from selling BTC: $5,550,048.20
+Total gain/loss: $64,881.97
+Percentage gain/loss: 1.18%
+
+Random Forest Model:
+Total spent purchasing BTC: $4,165,978.86
+Total realized from selling BTC: $4,349,286.58
+Total gain/loss: $183,307.72
+Percentage gain/loss: 4.40%
