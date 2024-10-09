@@ -139,8 +139,7 @@ Output Summary:
 -	Total realized: $4,349,286.58
 -	Net gain: $183,307.72 (4.40% gain)
 
-**Findings and Recommendations**
-Findings:
+**Findings**
 1.	Model Performance:
 -	The Random Forest model outperformed other models with a percentage gain of 4.40%, demonstrating better responsiveness to BTC price patterns.
 -	The SARIMA model achieved a 1.18% gain, indicating its utility but showing room for improvement.
@@ -153,7 +152,7 @@ Findings:
 -	The trading strategy based on Random Forest predictions resulted in a higher profit than the SARIMA-based strategy, however, neither produced a return that seemed commiserate with the risk being incurred, and neither outperformed a simple “Buy and Hold” strategy.
 -   Ultimately the project failed to create a model accurate enough to guide profitable trading decisions, but this is a very hard problem to solve and this project is a great starting point. 
 
-Recommendations
+**Recommendations**
 1.	Expand Features:
 -	Incorporate other relevant financial data, such as currency exchange rates, global market indices, or sentiment analysis from news and social media.
 2.	Model Improvement:
