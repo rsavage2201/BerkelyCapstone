@@ -28,7 +28,7 @@ So, there are two different financial instruments, valued (separately) on the sa
 **Installation**
 To run this project, follow these steps:
 1.	Access my [Capstone's public GitHub repo] (https://github.com/rsavage2201/BerkelyCapstone)
-2.	Using Jupyter Notebook, run the Python Notebook RMS Capstone 100824 (Final).ipynb
+2.	Using Jupyter Notebook, run the Python Notebook [RMS Capstone 100824 (Final).ipynb](https://github.com/rsavage2201/BerkelyCapstone/blob/main/RMS%20Capstone%20100824%20(Final).ipynb)
 
 **Usage**
 To execute each module, run the scripts sequentially. Each module builds upon the outputs of the previous ones, so they must be executed in order. Each module generates specific outputs such as datasets, trained models, visualizations, and evaluation reports.
@@ -165,15 +165,15 @@ Output Summary:
 -	Consider implementing an ensemble approach that combines the top-performing models for a more robust and diversified trading strategy.
 
 **Output Files and Images**
-1.	combined_stock_data.csv
-2.  crypto_data_combined.csv
-3.	normalized_prices_excluding_usdc_usdt.png
-4.	model_performance_summary.csv
-5.	average_rmse_per_model.png
-6.	average_r2_per_model.png
-7.	lstm_config_comparison.csv
-8.	combined_vs_actual_btc_prices.png
-9.	trading_strategy_results.txt
+1.	[combined_stock_data.csv](https://github.com/rsavage2201/BerkelyCapstone/blob/main/combined_stock_data.csv)
+2.  [crypto_data_combined.csv](https://github.com/rsavage2201/BerkelyCapstone/blob/main/crypto_data_combined.csv)
+3.	[normalized_prices_excluding_usdc_usdt.png](https://github.com/rsavage2201/BerkelyCapstone/blob/main/normalized_prices_excluding_usdc_usdt.png)
+4.	[model_performance_summary.csv](https://github.com/rsavage2201/BerkelyCapstone/blob/main/model_performance_summary.csv)
+5.	[average_rmse_per_model.png](https://github.com/rsavage2201/BerkelyCapstone/blob/main/average_rmse_per_model.png)
+6.	[average_r2_per_model.png](https://github.com/rsavage2201/BerkelyCapstone/blob/main/average_r2_per_model.png)
+7.	[lstm_config_comparison.csv](https://github.com/rsavage2201/BerkelyCapstone/blob/main/lstm_config_comparison.csv)
+8.	[combined_vs_actual_btc_prices.png](https://github.com/rsavage2201/BerkelyCapstone/blob/main/combined_vs_actual_btc_prices.png)
+9.	[trading_strategy_results.txt](https://github.com/rsavage2201/BerkelyCapstone/blob/main/trading_strategy_results.txt)
 
 **Dependencies**
 Ensure the following libraries are installed:
