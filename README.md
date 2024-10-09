@@ -39,7 +39,7 @@ o	Download and visualize the historical adjusted closing prices for the "Big 5" 
 o	Output: A CSV file (combined_stock_data.csv) containing the cleaned and merged stock prices data for the five companies.
 2.	Module 2: Crypto Currency Data Download
 o	Downloads historical cryptocurrency price data for specified assets for the date range and apply additional transformations to align with the stock data analysis.
-o	Output: The module generates a CSV file (crypto_data_combined.csv) containing the historical closing prices for each cryptocurrency.)
+o	Output: The module generates a CSV file (crypto_data_combined.csv) containing the historical closing prices for each cryptocurrency.
 3.	Module 3: Initial Exploration of the data
 o	Explore, visualize, and analyze the combined stock and cryptocurrency data by plotting price trends, normalizing values for comparison, and calculating correlations and volatility.
 o	Output: Several plots to visualize the above.
