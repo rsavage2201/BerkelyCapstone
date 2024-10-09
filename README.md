@@ -120,7 +120,6 @@ Objective Overview: Modules 6 and 7 are designed to evaluate the performance of 
 -	Configuration 3: A deeper network with three LSTM layers and varying dropout rates showed the best results among LSTM models, particularly for BTC_7d. Despite this, RMSE remained high, and R² values were still negative, demonstrating the challenge of tuning LSTM models effectively for this data.
 
 **Implementation of Best Models**
-Trading Strategy Simulation Summary
 Module 8 implements and simulates a trading strategy using the predictions from the SARIMA and Random Forest models to evaluate how well these models can forecast BTC price movements. The strategy involves buying BTC when the predicted price (from either model) is higher than the actual price and selling it 7 days later.
 
 Output Summary:
@@ -141,7 +140,7 @@ Output Summary:
 -	Net gain: $183,307.72 (4.40% gain)
 
 **Findings and Recommendations**
-Findings
+Findings:
 1.	Model Performance:
 -	The Random Forest model outperformed other models with a percentage gain of 4.40%, demonstrating better responsiveness to BTC price patterns.
 -	The SARIMA model achieved a 1.18% gain, indicating its utility but showing room for improvement.
