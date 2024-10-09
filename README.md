@@ -35,32 +35,32 @@ To execute each module, run the scripts sequentially. Each module builds upon th
 
 **Module Description**
 1.	Module 1: Stock Price Data Download.
-o	Download and visualize the historical adjusted closing prices for the "Big 5" technology companies over a fixed period (from January 1, 2022, to December 30, 2023).
-o	Output: A CSV file (combined_stock_data.csv) containing the cleaned and merged stock prices data for the five companies.
+-	Download and visualize the historical adjusted closing prices for the "Big 5" technology companies over a fixed period (from January 1, 2022, to December 30, 2023).
+-	Output: A CSV file (combined_stock_data.csv) containing the cleaned and merged stock prices data for the five companies.
 2.	Module 2: Crypto Currency Data Download
-o	Downloads historical cryptocurrency price data for specified assets for the date range and apply additional transformations to align with the stock data analysis.
-o	Output: The module generates a CSV file (crypto_data_combined.csv) containing the historical closing prices for each cryptocurrency.
+-	Downloads historical cryptocurrency price data for specified assets for the date range and apply additional transformations to align with the stock data analysis.
+-	Output: The module generates a CSV file (crypto_data_combined.csv) containing the historical closing prices for each cryptocurrency.
 3.	Module 3: Initial Exploration of the data
-o	Explore, visualize, and analyze the combined stock and cryptocurrency data by plotting price trends, normalizing values for comparison, and calculating correlations and volatility.
-o	Output: Several plots to visualize the above.
+-	Explore, visualize, and analyze the combined stock and cryptocurrency data by plotting price trends, normalizing values for comparison, and calculating correlations and volatility.
+-	Output: Several plots to visualize the above.
 4.	Module 4: Feature Engineering and Data Preparation
-o	Performs feature engineering, scaling, and preparation of stock and cryptocurrency data, particularly BTC, for predictive modeling by creating lag features, rolling averages, EMAs, and volatility measures.
-o	Output: A combined and transformed dataset saved as combined_data.csv, containing engineered features, future BTC prices as targets, and scaled values for modeling. 
+-	Performs feature engineering, scaling, and preparation of stock and cryptocurrency data, particularly BTC, for predictive modeling by creating lag features, rolling averages, EMAs, and volatility measures.
+-	Output: A combined and transformed dataset saved as combined_data.csv, containing engineered features, future BTC prices as targets, and scaled values for modeling. 
 5.	Module 5: Model Creation and Training 
-o	Trains multiple machine learning and time series models (Linear Regression, Random Forest, ARIMA, SARIMA) to predict Bitcoin prices at different time intervals (0, 1, 7, 14, and 28 days ahead). Evaluate these models using RMSE and R² metrics to determine their performance across different forecast horizons.
-o	Output: A summary CSV file (model_performance_summary.csv) containing the RMSE and R² values for each model and each forecast interval. 
+-	Trains multiple machine learning and time series models (Linear Regression, Random Forest, ARIMA, SARIMA) to predict Bitcoin prices at different time intervals (0, 1, 7, 14, and 28 days ahead). Evaluate these models using RMSE and R² metrics to determine their performance across different forecast horizons.
+-	Output: A summary CSV file (model_performance_summary.csv) containing the RMSE and R² values for each model and each forecast interval. 
 6.	Module 6: Model Evaluation and Visualization
-o	Visualizes and analyzes the performance of different models in predicting BTC prices across various time intervals by comparing RMSE and R² values.
-o	Output: Bar plots and heatmaps for RMSE and R² values across models and intervals, saves these visualizations as PNG files, and outputs a summary CSV file (model_performance_summary_averages.csv) showing the average performance metrics for each model.
+-	Visualizes and analyzes the performance of different models in predicting BTC prices across various time intervals by comparing RMSE and R² values.
+-	Output: Bar plots and heatmaps for RMSE and R² values across models and intervals, saves these visualizations as PNG files, and outputs a summary CSV file (model_performance_summary_averages.csv) showing the average performance metrics for each model.
 7.	Module 7: Implementing LSTM Model (Added)
-o	Evaluate various LSTM neural network configurations for predicting BTC prices at different time intervals.
-o	Output: A CSV file (lstm_config_comparison.csv) with RMSE and R² values for each LSTM configuration and target interval, alongside visualizations of RMSE and R² comparisons saved as PNG files.
+-	Evaluate various LSTM neural network configurations for predicting BTC prices at different time intervals.
+-	Output: A CSV file (lstm_config_comparison.csv) with RMSE and R² values for each LSTM configuration and target interval, alongside visualizations of RMSE and R² comparisons saved as PNG files.
 8.	Module 8: Evaluate Models Predictive ability
-o	Predicts Bitcoin prices for 2024 using SARIMA and Random Forest models, based on the performance of selected technology stock prices and previous BTC prices.
-o	Output: A CSV file (btc_predictions_deltas.csv) containing actual BTC prices, predictions from both models, and their deltas. It also creates visualizations comparing actual BTC prices against predictions from each model and a combined plot.
+-	Predicts Bitcoin prices for 2024 using SARIMA and Random Forest models, based on the performance of selected technology stock prices and previous BTC prices.
+-	Output: A CSV file (btc_predictions_deltas.csv) containing actual BTC prices, predictions from both models, and their deltas. It also creates visualizations comparing actual BTC prices against predictions from each model and a combined plot.
 9.	Module 9: Evaluate Trading Strategy Based on Models
-o	Evaluates trading strategies based on SARIMA and Random Forest model predictions by simulating buy-and-sell actions of Bitcoin over a 7-day period and comparing profits or losses generated by each model.
-o	Output: A summary of trading performance for each model, including total amounts spent, realized gains, and percentage gain/loss, as well as the starting and ending Bitcoin prices with percentage change over the period.
+-	Evaluates trading strategies based on SARIMA and Random Forest model predictions by simulating buy-and-sell actions of Bitcoin over a 7-day period and comparing profits or losses generated by each model.
+-	Output: A summary of trading performance for each model, including total amounts spent, realized gains, and percentage gain/loss, as well as the starting and ending Bitcoin prices with percentage change over the period.
 
 **Modeling Approach**
 Models Implemented:
@@ -90,34 +90,34 @@ In addition to the above models, I also experimented with Long Short-Term Memory
 
 Tuning Hyperparameters:
 Multiple configurations with varying numbers of LSTM layers, dropout rates, and units per layer were designed:
-o	Baseline: A single LSTM layer with 50 units.
-o	Configuration 1: Two LSTM layers (50 units each) with dropout rates of 0.2 after each layer to prevent overfitting.
-o	Configuration 2: A single LSTM layer with 100 units and a dropout rate of 0.3. The activation function used was tanh, and the optimizer was set to rmsprop.
-o	Configuration 3: Three LSTM layers (100, 50, 25 units) with dropout applied to the first two layers (0.2 each). The relu activation function and adam optimizer were chosen for this configuration.
+-	Baseline: A single LSTM layer with 50 units.
+-	Configuration 1: Two LSTM layers (50 units each) with dropout rates of 0.2 after each layer to prevent overfitting.
+-	Configuration 2: A single LSTM layer with 100 units and a dropout rate of 0.3. The activation function used was tanh, and the optimizer was set to rmsprop.
+-	Configuration 3: Three LSTM layers (100, 50, 25 units) with dropout applied to the first two layers (0.2 each). The relu activation function and adam optimizer were chosen for this configuration.
 Batch Size and Epochs:
-o	Different batch sizes (16, 32, 64) and epochs (100 or 150) were used for each configuration to test model performance and speed up convergence.
+-	Different batch sizes (16, 32, 64) and epochs (100 or 150) were used for each configuration to test model performance and speed up convergence.
 Early Stopping:
-o	An EarlyStopping callback was applied during training to halt the process if the model's validation loss did not improve for 10 consecutive epochs, preventing overfitting and saving time.
+-	An EarlyStopping callback was applied during training to halt the process if the model's validation loss did not improve for 10 consecutive epochs, preventing overfitting and saving time.
 This module, therefore, offers a comprehensive evaluation of various models and configurations, exploring both traditional ML and neural network approaches across multiple time horizons.
 
 Model Evaluation
 Objective Overview: Modules 6 and 7 are designed to evaluate the performance of various models (Linear Regression, ARIMA, SARIMA, Random Forest, and LSTM) for predicting Bitcoin (BTC) prices across multiple time horizons: 0, 1, 7, 14, and 28 days into the future. The results are assessed using Root Mean Squared Error (RMSE) and R² metrics.
 
 1.	Linear Regression:
-o	Performed well for shorter-term predictions (e.g., BTC_0d and BTC_1d) with high R² values (1.0 and 0.97, respectively).
-o	Performance deteriorated significantly for longer intervals (e.g., BTC_28d), showing negative R² values and high RMSE, indicating that the model struggles with long-term predictions.
+-	Performed well for shorter-term predictions (e.g., BTC_0d and BTC_1d) with high R² values (1.0 and 0.97, respectively).
+-	Performance deteriorated significantly for longer intervals (e.g., BTC_28d), showing negative R² values and high RMSE, indicating that the model struggles with long-term predictions.
 2.	ARIMA and SARIMA:
-o	ARIMA generally performed poorly across all intervals, with negative R² values and high RMSE scores, suggesting that its capability to capture the BTC price dynamics is limited.
-o	SARIMA showed a slight improvement over ARIMA, particularly for short-term intervals (BTC_0d and BTC_1d), where it achieved positive R² values. However, its performance declined for longer intervals (e.g., BTC_28d), where the R² values were negative and the RMSE remained high, indicating poor predictive accuracy as the forecast horizon increased.
+-	ARIMA generally performed poorly across all intervals, with negative R² values and high RMSE scores, suggesting that its capability to capture the BTC price dynamics is limited.
+-	SARIMA showed a slight improvement over ARIMA, particularly for short-term intervals (BTC_0d and BTC_1d), where it achieved positive R² values. However, its performance declined for longer intervals (e.g., BTC_28d), where the R² values were negative and the RMSE remained high, indicating poor predictive accuracy as the forecast horizon increased.
 3.	Random Forest:
-o	Outperformed other traditional models (e.g., ARIMA, SARIMA) with positive R² values for short- and medium-term predictions (BTC_0d, BTC_1d, BTC_7d, and BTC_14d). The model’s R² values decreased and even turned negative for BTC_28d, demonstrating reduced reliability for long-term forecasting.
-o	Achieved the lowest RMSE values for short-term predictions, highlighting its effectiveness in capturing the immediate patterns in BTC price fluctuations.
+-	Outperformed other traditional models (e.g., ARIMA, SARIMA) with positive R² values for short- and medium-term predictions (BTC_0d, BTC_1d, BTC_7d, and BTC_14d). The model’s R² values decreased and even turned negative for BTC_28d, demonstrating reduced reliability for long-term forecasting.
+-	Achieved the lowest RMSE values for short-term predictions, highlighting its effectiveness in capturing the immediate patterns in BTC price fluctuations.
 4.	LSTM Models:
-o	Multiple configurations of LSTM models were tested (Baseline, Configuration 1, Configuration 2, Configuration 3), experimenting with different hyperparameters like the number of layers, units per layer, activation functions, dropout rates, and optimizers to optimize performance:
-	Baseline: A simple LSTM with one layer, which generally showed very high RMSE and negative R² values across all intervals.
-	Configuration 1: Included two LSTM layers and dropout; although some improvements were observed, it still showed poor performance, particularly for the short-term intervals (BTC_0d and BTC_1d).
-	Configuration 2: Tuned for a single large LSTM layer with a higher dropout rate and the tanhactivation function. However, this configuration yielded high RMSE and negative R² values, indicating it was not effective for this task.
-	Configuration 3: A deeper network with three LSTM layers and varying dropout rates showed the best results among LSTM models, particularly for BTC_7d. Despite this, RMSE remained high, and R² values were still negative, demonstrating the challenge of tuning LSTM models effectively for this data.
+-	Multiple configurations of LSTM models were tested (Baseline, Configuration 1, Configuration 2, Configuration 3), experimenting with different hyperparameters like the number of layers, units per layer, activation functions, dropout rates, and optimizers to optimize performance:
+-	Baseline: A simple LSTM with one layer, which generally showed very high RMSE and negative R² values across all intervals.
+-	Configuration 1: Included two LSTM layers and dropout; although some improvements were observed, it still showed poor performance, particularly for the short-term intervals (BTC_0d and BTC_1d).
+-	Configuration 2: Tuned for a single large LSTM layer with a higher dropout rate and the tanhactivation function. However, this configuration yielded high RMSE and negative R² values, indicating it was not effective for this task.
+-	Configuration 3: A deeper network with three LSTM layers and varying dropout rates showed the best results among LSTM models, particularly for BTC_7d. Despite this, RMSE remained high, and R² values were still negative, demonstrating the challenge of tuning LSTM models effectively for this data.
 
 **Implementation of Best Models**
 Trading Strategy Simulation Summary
@@ -132,39 +132,39 @@ Module 9 builds on Module 8 by calculating the total financial impact of executi
 Output Summary:
 •	The BTC market saw a 31.69% increase in price from $49,958.22 at the start of the year to $65,790.66 at the end of September 2024.
 •	SARIMA Model:
-o	Total spent: $5,485,166.23
-o	Total realized: $5,550,048.20
-o	Net gain: $64,881.97 (1.18% gain)
+-	Total spent: $5,485,166.23
+-	Total realized: $5,550,048.20
+-	Net gain: $64,881.97 (1.18% gain)
 •	Random Forest Model:
-o	Total spent: $4,165,978.86
-o	Total realized: $4,349,286.58
-o	Net gain: $183,307.72 (4.40% gain)
+-	Total spent: $4,165,978.86
+-	Total realized: $4,349,286.58
+-	Net gain: $183,307.72 (4.40% gain)
 
 **Findings and Recommendations**
 Findings
 1.	Model Performance:
-o	The Random Forest model outperformed other models with a percentage gain of 4.40%, demonstrating better responsiveness to BTC price patterns.
-o	The SARIMA model achieved a 1.18% gain, indicating its utility but showing room for improvement.
-o	Short-term predictions (0 and 1 day ahead) are most effectively handled by the Linear Regression and Random Forest models, with both showing low RMSE and high R² values.
-o	Medium-term predictions (7 and 14 days) have reasonable accuracy with the Random Forest model, but performance diminishes as the interval increases.
-o	Long-term predictions (28 days) show a significant decline across all models, with negative R² values indicating that these models cannot reliably predict BTC prices over a 28-day horizon.
-o	LSTM configurations tested did not outperform traditional models, even with extensive hyperparameter tuning, likely due to the complexity and volatility of BTC prices that require more advanced architectures or feature engineering.
+-	The Random Forest model outperformed other models with a percentage gain of 4.40%, demonstrating better responsiveness to BTC price patterns.
+-	The SARIMA model achieved a 1.18% gain, indicating its utility but showing room for improvement.
+-	Short-term predictions (0 and 1 day ahead) are most effectively handled by the Linear Regression and Random Forest models, with both showing low RMSE and high R² values.
+-	Medium-term predictions (7 and 14 days) have reasonable accuracy with the Random Forest model, but performance diminishes as the interval increases.
+-	Long-term predictions (28 days) show a significant decline across all models, with negative R² values indicating that these models cannot reliably predict BTC prices over a 28-day horizon.
+-	LSTM configurations tested did not outperform traditional models, even with extensive hyperparameter tuning, likely due to the complexity and volatility of BTC prices that require more advanced architectures or feature engineering.
 
 2.	Trading Simulation:
-o	The trading strategy based on Random Forest predictions resulted in a higher profit than the SARIMA-based strategy, however, neither produced a return that seemed commiserate with the risk being incurred, and neither outperformed a simple “Buy and Hold” strategy.
-o   Ultimately the project failed to create a model accurate enough to guide profitable trading decisions, but this is a very hard problem to solve and this project is a great starting point. 
+-	The trading strategy based on Random Forest predictions resulted in a higher profit than the SARIMA-based strategy, however, neither produced a return that seemed commiserate with the risk being incurred, and neither outperformed a simple “Buy and Hold” strategy.
+-   Ultimately the project failed to create a model accurate enough to guide profitable trading decisions, but this is a very hard problem to solve and this project is a great starting point. 
 
 Recommendations
 1.	Expand Features:
-o	Incorporate other relevant financial data, such as currency exchange rates, global market indices, or sentiment analysis from news and social media.
+-	Incorporate other relevant financial data, such as currency exchange rates, global market indices, or sentiment analysis from news and social media.
 2.	Model Improvement:
-o	Enhance the SARIMA model by exploring hybrid models (e.g., combining SARIMA with LSTM) to better capture BTC price volatility.
-o	Focus on short-term forecasting: Models like Random Forest and Linear Regression demonstrate strong capabilities for short-term BTC predictions and should be preferred for intervals of up to 7 days.
+-	Enhance the SARIMA model by exploring hybrid models (e.g., combining SARIMA with LSTM) to better capture BTC price volatility.
+-	Focus on short-term forecasting: Models like Random Forest and Linear Regression demonstrate strong capabilities for short-term BTC predictions and should be preferred for intervals of up to 7 days.
 •	Further tuning for LSTM models: Given their potential, additional configurations (e.g., deeper networks, different input sequences, or other recurrent architectures like GRU) may be explored to improve performance.
 3.	Explore Other Time Horizons
-o	The models work better with shorter time horizons, my next step is to explore the 48 hour time horizon and repeat the trading experiment.
+-	The models work better with shorter time horizons, my next step is to explore the 48 hour time horizon and repeat the trading experiment.
 4.	Investment Strategy:
-o	Consider implementing an ensemble approach that combines the top-performing models for a more robust and diversified trading strategy.
+-	Consider implementing an ensemble approach that combines the top-performing models for a more robust and diversified trading strategy.
 
 **Output Files and Images**
 1.	combined_stock_data.csv
